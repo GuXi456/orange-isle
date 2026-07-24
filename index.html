@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>橘子洲 · 沁园春 · 长沙</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-snap-type: y mandatory; }
+  body { background: #0a0a0a; color: #fff; overflow-x: hidden; }
+
+  .font-mao { font-family: 'Liu Jian Mao Cao', 'KaiTi', 'STKaiti', cursive; }
+  .font-xingshu { font-family: 'ZCOOL XiaoWei', 'KaiTi', 'STKaiti', serif; }
+  .font-sans { font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif; }
+
+  section {
+    scroll-snap-align: start;
+    position: relative; height: 100vh; overflow: hidden;
+    background-color: #0a0a0a;
+    background-size: contain; background-position: center; background-repeat: no-repeat;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 60px 40px;
+  }
+  section::after {
+    content: ''; position: absolute; inset: 0; z-index: 1;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,.15) 0%, rgba(0,0,0,.6) 100%);
+  }
+  section > * { position: relative; z-index: 10; }
+
+  /* Photo assignments */
+  .sec-hero    { background-image: url('橘子洲的照片/航拍图.webp'); }
+  .sec-poem1   { background-image: url('橘子洲的照片/毛主席雕像1.jpg'); }
+  .sec-poem2   { background-image: url('橘子洲的照片/秋景.webp'); }
+  .sec-info    { background-image: url('橘子洲的照片/林荫道.webp'); }
+  .sec-spots   { background-image: url('橘子洲的照片/faPxuQqZB.jpeg'); }
+  .sec-night   { background-image: url('橘子洲的照片/烟花秀1.jpeg'); }
+  .sec-food    { background-image: url('橘子洲的照片/坡子街.webp'); }
+  .sec-footer  { background-image: url('橘子洲的照片/艺术照.webp'); }
+
+  /* ===== HERO ===== */
+  .hero-title {
+    font-size: 100px; letter-spacing: 30px; line-height: 1; color: #fff;
+    text-shadow: 0 4px 50px rgba(0,0,0,.8), 0 2px 20px rgba(255,160,40,.5);
+  }
+  .hero-sub { font-size: 14px; letter-spacing: 16px; color: rgba(255,255,255,.7); margin-top: 20px; text-shadow: 0 1px 8px rgba(0,0,0,.8); }
+
+  /* ===== POEM ===== */
+  .poem-label { font-size: 15px; letter-spacing: 12px; color: rgba(255,255,255,.6); margin-bottom: 30px; text-shadow: 0 1px 8px rgba(0,0,0,.8); }
+  .poem-text { font-size: 36px; letter-spacing: 8px; line-height: 2.1; color: #fff; text-shadow: 0 3px 24px rgba(0,0,0,.9); }
+  .poem-text em { font-style: normal; color: #ffc870; text-shadow: 0 0 20px rgba(255,180,80,.6); }
+  .poem-text .gold { color: #ffe0a0; text-shadow: 0 0 16px rgba(255,200,100,.5); }
+  .poem-muted { font-size: 22px; color: rgba(255,255,255,.65); margin-top: 20px; font-family: 'Liu Jian Mao Cao',cursive; text-shadow: 0 2px 16px rgba(0,0,0,.9); }
+
+  /* ===== INFO ===== */
+  .sec-info { gap: 24px; }
+  .info-title { font-size: 38px; letter-spacing: 10px; line-height: 1.5; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,.9); }
+  .info-title em { font-style: normal; color: #ffc870; text-shadow: 0 0 20px rgba(255,180,80,.5); }
+  .info-body { font-size: 15px; line-height: 2.2; letter-spacing: 3px; max-width: 520px; color: rgba(255,255,255,.85); text-shadow: 0 1px 8px rgba(0,0,0,.9); }
+  .info-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; width: 100%; max-width: 560px; }
+  .info-tag { background: rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.12); border-radius: 12px; padding: 14px 8px; }
+  .info-tag .icon { font-size: 22px; margin-bottom: 4px; }
+  .info-tag .lbl { font-size: 10px; letter-spacing: 3px; color: rgba(255,255,255,.5); }
+  .info-tag .val { font-size: 13px; letter-spacing: 2px; color: #fff; margin-top: 2px; text-shadow: 0 1px 4px rgba(0,0,0,.6); }
+
+  /* ===== SPOTS ===== */
+  .sec-spots { gap: 26px; }
+  .spots-title { font-size: 32px; letter-spacing: 12px; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,.9); }
+  .spots-title em { font-style: normal; color: #ffc870; text-shadow: 0 0 20px rgba(255,180,80,.5); }
+  .spots-list { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 540px; }
+  .spot-row { display: flex; align-items: flex-start; gap: 14px; text-align: left; background: rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 16px 20px; }
+  .spot-row .num { flex-shrink: 0; font-size: 32px; font-weight: 900; color: rgba(255,180,100,.35); line-height: 1; width: 36px; }
+  .spot-row h4 { font-size: 18px; letter-spacing: 4px; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.8); }
+  .spot-row p { font-size: 13px; line-height: 1.7; letter-spacing: 2px; color: rgba(255,255,255,.7); text-shadow: 0 1px 4px rgba(0,0,0,.6); }
+
+  /* ===== NIGHT ===== */
+  .sec-night { gap: 18px; }
+  .night-title { font-size: 48px; letter-spacing: 16px; color: #fff; text-shadow: 0 0 60px rgba(255,200,80,.6), 0 4px 30px rgba(0,0,0,.9); }
+  .night-sub { font-size: 18px; letter-spacing: 10px; color: rgba(255,255,255,.7); text-shadow: 0 2px 12px rgba(0,0,0,.9); }
+  .night-tag { padding: 16px 32px; background: rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; font-size: 15px; letter-spacing: 4px; color: rgba(255,255,255,.75); text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+  .night-tag strong { color: #ffd080; font-size: 17px; }
+
+  /* ===== FOOD ===== */
+  .sec-food { gap: 28px; }
+  .food-title { font-size: 30px; letter-spacing: 12px; color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,.9); }
+  .food-title em { font-style: normal; color: #ffc870; text-shadow: 0 0 20px rgba(255,180,80,.5); }
+  .food-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; width: 100%; max-width: 540px; }
+  .food-item { background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.1); border-radius: 14px; padding: 18px 10px; }
+  .food-item .emoji { font-size: 28px; margin-bottom: 4px; }
+  .food-item h5 { font-size: 17px; letter-spacing: 3px; color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+  .food-item .rec { font-size: 11px; letter-spacing: 2px; color: rgba(255,255,255,.55); text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+  .food-item .rec span { color: #ffc870; font-weight: 500; }
+
+  /* ===== FOOTER ===== */
+  .sec-footer { background-size: contain; }
+  .footer-title { font-size: 44px; letter-spacing: 16px; line-height: 1.9; color: #fff; text-shadow: 0 3px 30px rgba(0,0,0,.9); }
+  .footer-title b { color: #ffc870; text-shadow: 0 0 30px rgba(255,180,80,.5); }
+  .footer-addr { font-size: 13px; letter-spacing: 6px; color: rgba(255,255,255,.5); text-shadow: 0 1px 8px rgba(0,0,0,.8); margin-top: 28px; }
+
+  /* ===== MUSIC BUTTON ===== */
+  .music-btn {
+    position: fixed; bottom: 30px; right: 30px; z-index: 9999;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.15);
+    color: #fff; font-size: 20px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .3s;
+  }
+  .music-btn:hover { background: rgba(0,0,0,.75); }
+  .music-btn.off { color: rgba(255,255,255,.3); }
+
+  /* ===== REVEAL ===== */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.on { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 600px) {
+    .hero-title { font-size: 56px; letter-spacing: 14px; }
+    .poem-text { font-size: 24px; letter-spacing: 4px; }
+    .info-grid { grid-template-columns: repeat(3, 1fr); }
+    .night-title { font-size: 34px; letter-spacing: 8px; }
+    .footer-title { font-size: 28px; letter-spacing: 8px; }
+    .food-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ① 封面 -->
+<section class="sec-hero">
+  <div class="hero-sub font-sans reveal">CHANGSHA · ORANGE ISLE</div>
+  <div class="hero-title font-mao reveal">橘子洲</div>
+</section>
+
+<!-- ② 上阕 -->
+<section class="sec-poem1">
+  <div class="poem-label font-sans reveal">沁园春 · 长沙 · 上阕</div>
+  <div class="poem-text font-mao reveal">
+    独立<em>寒秋</em>，湘江北去，<em>橘子洲头</em><br>
+    看<em>万山红遍</em>，层林尽染<br>
+    漫江碧透，<em>百舸争流</em><br>
+    鹰击长空，鱼翔浅底<br>
+    万类霜天<em>竞自由</em>
+  </div>
+  <div class="poem-muted reveal">怅寥廓，问苍茫大地，谁主沉浮？</div>
+</section>
+
+<!-- ③ 下阕 -->
+<section class="sec-poem2">
+  <div class="poem-label font-sans reveal">沁园春 · 长沙 · 下阕</div>
+  <div class="poem-text font-mao reveal">
+    携来百侣曾游<br>
+    忆往昔<em>峥嵘岁月稠</em><br>
+    恰<span class="gold">同学少年</span>，风华正茂<br>
+    书生意气，<em>挥斥方遒</em><br>
+    指点江山，激扬文字<br>
+    粪土当年<em>万户侯</em>
+  </div>
+  <div class="poem-muted reveal">曾记否，到中流击水，浪遏飞舟？</div>
+</section>
+
+<!-- ④ 景区速览 -->
+<section class="sec-info">
+  <div class="info-title font-xingshu reveal">长沙的<em>城市客厅</em><br>湘江之心</div>
+  <div class="info-body font-sans reveal">橘子洲位于长沙市区湘江中心，全长约5公里，被誉为"中国第一洲"。1925年，青年毛泽东在此写下《沁园春·长沙》，从此名扬天下。</div>
+  <div class="info-grid reveal">
+    <div class="info-tag"><div class="icon">🚇</div><div class="lbl font-sans">交通</div><div class="val font-sans">地铁2号线</div></div>
+    <div class="info-tag"><div class="icon">🕐</div><div class="lbl font-sans">开放</div><div class="val font-sans">全天·免费</div></div>
+    <div class="info-tag"><div class="icon">🚂</div><div class="lbl font-sans">观光</div><div class="val font-sans">小火车 ¥40</div></div>
+    <div class="info-tag"><div class="icon">🎆</div><div class="lbl font-sans">烟火</div><div class="val font-sans">每周六晚</div></div>
+    <div class="info-tag"><div class="icon">🍊</div><div class="lbl font-sans">最佳</div><div class="val font-sans">金秋时节</div></div>
+  </div>
+</section>
+
+<!-- ⑤ 打卡点位 -->
+<section class="sec-spots">
+  <div class="spots-title font-xingshu reveal">橘子洲 · <em>必打卡</em></div>
+  <div class="spots-list reveal">
+    <div class="spot-row"><div class="num font-sans">01</div><div><h4 class="font-xingshu">毛泽东青年雕像</h4><p class="font-sans">高32米花岗岩巨像，橘子洲标志性核心景观</p></div></div>
+    <div class="spot-row"><div class="num font-sans">02</div><div><h4 class="font-xingshu">问天台</h4><p class="font-sans">"问苍茫大地，谁主沉浮"——极目远眺，湘江北去</p></div></div>
+    <div class="spot-row"><div class="num font-sans">03</div><div><h4 class="font-xingshu">望江亭</h4><p class="font-sans">临江古典亭阁，飞檐翘角，对岸天际线尽收眼底</p></div></div>
+    <div class="spot-row"><div class="num font-sans">04</div><div><h4 class="font-xingshu">百米橘林大道</h4><p class="font-sans">橘树长廊，秋季金橘挂枝头，最出片的浪漫小径</p></div></div>
+    <div class="spot-row"><div class="num font-sans">05</div><div><h4 class="font-xingshu">烟花观景台</h4><p class="font-sans">每周六晚焰火升空，万花映江，如梦似幻</p></div></div>
+  </div>
+</section>
+
+<!-- ⑥ 烟火秀 -->
+<section class="sec-night">
+  <div class="night-title font-xingshu reveal">星河璀璨</div>
+  <div class="night-sub font-xingshu reveal">到中流击水 · 浪遏飞舟</div>
+  <div class="night-tag font-sans reveal"><span>橘洲烟火秀 · </span><strong>每周六晚</strong><span> · 不见不散</span></div>
+</section>
+
+<!-- ⑦ 美食 -->
+<section class="sec-food">
+  <div class="food-title font-xingshu reveal">舌尖上的<em>长沙</em></div>
+  <div class="food-grid reveal">
+    <div class="food-item"><div class="emoji">🍜</div><h5 class="font-xingshu">长沙米粉</h5><div class="rec font-sans">推荐 <span>杨裕兴</span></div></div>
+    <div class="food-item"><div class="emoji">🦞</div><h5 class="font-xingshu">口味虾</h5><div class="rec font-sans">推荐 <span>文和友</span></div></div>
+    <div class="food-item"><div class="emoji">🧈</div><h5 class="font-xingshu">臭豆腐</h5><div class="rec font-sans">推荐 <span>黑色经典</span></div></div>
+    <div class="food-item"><div class="emoji">🍵</div><h5 class="font-xingshu">茶颜悦色</h5><div class="rec font-sans">推荐 <span>太平街店</span></div></div>
+    <div class="food-item"><div class="emoji">🍡</div><h5 class="font-xingshu">糖油粑粑</h5><div class="rec font-sans">推荐 <span>李公庙</span></div></div>
+    <div class="food-item"><div class="emoji">🌶️</div><h5 class="font-xingshu">剁椒鱼头</h5><div class="rec font-sans">推荐 <span>费大厨</span></div></div>
+  </div>
+</section>
+
+<!-- ⑧ 结尾 -->
+<section class="sec-footer">
+  <div class="footer-title font-xingshu reveal">这个夏天<br>我在<b>橘子洲</b><br>等你</div>
+  <div class="footer-addr font-sans reveal">湖南省 · 长沙市 · 岳麓区 · 橘子洲景区<br>ORANGE ISLE, CHANGSHA, HUNAN</div>
+</section>
+
+<audio id="bgm" loop>
+  <source src="橘子洲的照片/音乐1.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn playing" id="musicBtn" title="音乐 开/关">&#9835;</button>
+
+<script>
+(function(){
+  // Fade-in
+  var obs = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting) e.target.classList.add('on'); });
+  }, {threshold: .12});
+  document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
+
+  // Music
+  var audio = document.getElementById('bgm');
+  var btn = document.getElementById('musicBtn');
+  audio.play().then(function(){ btn.classList.add('playing'); }).catch(function(){
+    btn.classList.add('off');
+  });
+  btn.addEventListener('click', function(){
+    if (audio.paused) { audio.play(); btn.classList.remove('off'); }
+    else { audio.pause(); btn.classList.add('off'); }
+  });
+  document.addEventListener('click', function once(){
+    if (audio.paused) { audio.play(); btn.classList.remove('off'); }
+  }, { once: true });
+
+  // Auto-scroll
+  var sections = document.querySelectorAll('section');
+  var current = 0, autoTimer, userScrolling = false, scrollTimeout;
+
+  function scrollTo(idx) {
+    if (idx < 0 || idx >= sections.length) return;
+    current = idx;
+    var start = window.pageYOffset;
+    var end = sections[current].getBoundingClientRect().top + start;
+    var dist = end - start, duration = 3500, startTime = null;
+
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var p = Math.min((ts - startTime) / duration, 1);
+      window.scrollTo(0, start + dist * Math.sin(p * Math.PI / 2));
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  autoTimer = setInterval(function() {
+    if (!userScrolling) { current = (current + 1) % sections.length; scrollTo(current); }
+  }, 4000);
+
+  window.addEventListener('wheel', function() {
+    userScrolling = true;
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function() {
+      userScrolling = false;
+      // Snap to nearest section
+      var best = 0, bestDist = Infinity;
+      sections.forEach(function(s, i) {
+        var d = Math.abs(s.getBoundingClientRect().top);
+        if (d < bestDist) { bestDist = d; best = i; }
+      });
+      current = best;
+      scrollTo(current);
+    }, 2000);
+  }, { passive: true });
+
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); scrollTo(current + 1); }
+    if (e.key === 'ArrowUp' || e.key === 'PageUp') { e.preventDefault(); scrollTo(current - 1); }
+  });
+})();
+</script>
+</body>
+</html>
