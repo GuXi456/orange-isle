@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>橘子洲 · 沁园春 · 长沙</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao&family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500&display=swap');
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-snap-type: y mandatory; }
   body { background: #0a0a0a; color: #fff; overflow-x: hidden; }
 
-  .font-mao { font-family: 'Liu Jian Mao Cao', 'KaiTi', 'STKaiti', cursive; }
-  .font-xingshu { font-family: 'ZCOOL XiaoWei', 'KaiTi', 'STKaiti', serif; }
-  .font-sans { font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif; }
+  .font-mao { font-family: 'KaiTi', 'STKaiti', 'FangSong', cursive; }
+  .font-xingshu { font-family: 'KaiTi', 'STKaiti', 'FangSong', serif; }
+  .font-sans { font-family: 'Microsoft YaHei', 'SimHei', sans-serif; }
 
   section {
     scroll-snap-align: start;
@@ -37,7 +36,7 @@
   .sec-info    { background-image: url('橘子洲的照片/林荫道.webp'); }
   .sec-spots   { background-image: url('橘子洲的照片/faPxuQqZB.jpeg'); }
   .sec-night   { background-image: url('橘子洲的照片/烟花秀1.jpeg'); }
-  .sec-food    { background-image: url('橘子洲的照片/坡子街.webp'); }
+  .sec-food    { background-image: url('橘子洲的照片/美食拼图.png'); }
   .sec-footer  { background-image: url('橘子洲的照片/艺术照.webp'); }
 
   /* ===== HERO ===== */
@@ -140,96 +139,33 @@
 <!-- ① 封面 -->
 <section class="sec-hero">
   <div class="hero-sub font-sans reveal">CHANGSHA · ORANGE ISLE</div>
-  <div class="hero-title font-mao reveal">橘子洲</div>
+  <div class="hero-title reveal" style="font-family:'Liu Jian Mao Cao',KaiTi,STKaiti,cursive;font-size:100px;letter-spacing:30px;">橘子洲</div>
+
 <div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div>
 </section>
 
 <!-- ② 上阕 -->
-<section class="sec-poem1">
-  <div class="poem-label font-sans reveal">沁园春 · 长沙 · 上阕</div>
-  <div class="poem-text font-mao reveal">
-    独立<em>寒秋</em>，湘江北去，<em>橘子洲头</em><br>
-    看<em>万山红遍</em>，层林尽染<br>
-    漫江碧透，<em>百舸争流</em><br>
-    鹰击长空，鱼翔浅底<br>
-    万类霜天<em>竞自由</em>
-  </div>
-  <div class="poem-muted reveal">怅寥廓，问苍茫大地，谁主沉浮？</div>
-<div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div>
-</section>
+<section class="sec-poem1"><div class="bg-main"></div><div class="bg-overlay"></div><div style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);z-index:20;text-align:center;background:rgba(20,15,10,0.35);padding:8px 20px;border-radius:6px;"><span style="font-family:'Liu Jian Mao Cao',KaiTi,STKaiti,cursive;font-size:16px;color:rgba(240,225,200,0.85);letter-spacing:4px;line-height:1.8;">怅寥廓，问苍茫大地，谁主沉浮？</span><br><span style="font-family:'Liu Jian Mao Cao',KaiTi,STKaiti,cursive;font-size:11px;color:rgba(220,210,190,0.55);letter-spacing:2px;">——毛泽东</span></div><div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div></section>
 
 <!-- ③ 下阕 -->
-<section class="sec-poem2">
-  <div class="poem-label font-sans reveal">沁园春 · 长沙 · 下阕</div>
-  <div class="poem-text font-mao reveal">
-    携来百侣曾游<br>
-    忆往昔<em>峥嵘岁月稠</em><br>
-    恰<span class="gold">同学少年</span>，风华正茂<br>
-    书生意气，<em>挥斥方遒</em><br>
-    指点江山，激扬文字<br>
-    粪土当年<em>万户侯</em>
-  </div>
-  <div class="poem-muted reveal">曾记否，到中流击水，浪遏飞舟？</div>
-<div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div>
-</section>
+<section class="sec-poem2"><div class="bg-main"></div><div class="bg-overlay"></div><div style="position:absolute;bottom:50px;left:calc(50% - 200px);z-index:20;max-width:340px;background:rgba(30,20,10,0.3);padding:8px 14px;border-radius:6px;"><span style="font-family:KaiTi,STKaiti,FangSong,cursive;font-size:18px;color:rgba(245,238,220,0.85);letter-spacing:3px;line-height:1.5;">来橘子洲<br>吹湘江风<br>追五星光<br>把青春写进山水诗行</span></div><div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div></section>
 
 <!-- ④ 景区速览 -->
-<section class="sec-info">
-  <div class="info-title font-xingshu reveal">长沙的<em>城市客厅</em><br>湘江之心</div>
-  <div class="info-body font-sans reveal">橘子洲位于长沙市区湘江中心，全长约5公里，被誉为"中国第一洲"。1925年，青年毛泽东在此写下《沁园春·长沙》，从此名扬天下。</div>
-  <div class="info-grid reveal">
-    <div class="info-tag"><div class="icon">🚇</div><div class="lbl font-sans">交通</div><div class="val font-sans">地铁2号线</div></div>
-    <div class="info-tag"><div class="icon">🕐</div><div class="lbl font-sans">开放</div><div class="val font-sans">全天·免费</div></div>
-    <div class="info-tag"><div class="icon">🚂</div><div class="lbl font-sans">观光</div><div class="val font-sans">小火车 ¥40</div></div>
-    <div class="info-tag"><div class="icon">🎆</div><div class="lbl font-sans">烟火</div><div class="val font-sans">每周六晚</div></div>
-    <div class="info-tag"><div class="icon">🍊</div><div class="lbl font-sans">最佳</div><div class="val font-sans">金秋时节</div></div>
-  </div>
-<div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div>
-</section>
+<section class="sec-info"><div class="bg-main"></div><div class="bg-overlay"></div><div style="position:absolute;bottom:40px;left:calc(50% - 250px);z-index:20;max-width:500px;background:rgba(25,18,10,0.38);padding:10px 16px;border-radius:6px;"><span style="font-family:KaiTi,STKaiti,FangSong,cursive;font-size:14px;color:rgba(242,235,218,0.85);letter-spacing:3px;line-height:1.9;">观光小火车 ￥40 · 环岛全程<br>橘子洲码头游船 ￥80起 · 湘江游览<br>橘洲沙滩公园 ￥30 · 运动休闲</span></div><div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div></section>
 
 <!-- ⑤ 打卡点位 -->
-<section class="sec-spots">
-  <div class="spots-title font-xingshu reveal">橘子洲 · <em>必打卡</em></div>
-  <div class="spots-list reveal">
-    <div class="spot-row"><div class="num font-sans">01</div><div><h4 class="font-xingshu">毛泽东青年雕像</h4><p class="font-sans">高32米花岗岩巨像，橘子洲标志性核心景观</p></div></div>
-    <div class="spot-row"><div class="num font-sans">02</div><div><h4 class="font-xingshu">问天台</h4><p class="font-sans">"问苍茫大地，谁主沉浮"——极目远眺，湘江北去</p></div></div>
-    <div class="spot-row"><div class="num font-sans">03</div><div><h4 class="font-xingshu">望江亭</h4><p class="font-sans">临江古典亭阁，飞檐翘角，对岸天际线尽收眼底</p></div></div>
-    <div class="spot-row"><div class="num font-sans">04</div><div><h4 class="font-xingshu">百米橘林大道</h4><p class="font-sans">橘树长廊，秋季金橘挂枝头，最出片的浪漫小径</p></div></div>
-    <div class="spot-row"><div class="num font-sans">05</div><div><h4 class="font-xingshu">烟花观景台</h4><p class="font-sans">每周六晚焰火升空，万花映江，如梦似幻</p></div></div>
-  </div>
-<div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div>
-</section>
+<section class="sec-spots"><div class="bg-main"></div><div class="bg-overlay"></div><div style="position:absolute;bottom:36px;left:calc(50% - 260px);z-index:20;max-width:520px;background:rgba(25,18,10,0.38);padding:10px 16px;border-radius:6px;"><span style="font-family:KaiTi,STKaiti,FangSong,cursive;font-size:14px;color:rgba(242,235,218,0.85);letter-spacing:3px;line-height:1.9;">毛泽东青年雕像 · 32米花岗岩巨像<br>望江亭 · 飞檐翘角观湘江北去<br>问天台 · "谁主沉浮"千古之问<br>百米橘林大道 · 秋来金橘满枝</span></div><div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div></section>
 
 <!-- ⑥ 烟火秀 -->
-<section class="sec-night">
-  <div class="night-title font-xingshu reveal">星河璀璨</div>
-  <div class="night-sub font-xingshu reveal">到中流击水 · 浪遏飞舟</div>
-  <div class="night-tag font-sans reveal"><span>橘洲烟火秀 · </span><strong>每周六晚</strong><span> · 不见不散</span></div>
-<div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div>
-</section>
+<section class="sec-night"><div class="bg-main"></div><div class="bg-overlay"></div><div style="position:absolute;bottom:36px;left:calc(50% - 240px);z-index:20;max-width:480px;background:rgba(15,10,25,0.4);padding:10px 16px;border-radius:6px;"><span style="font-family:KaiTi,STKaiti,FangSong,cursive;font-size:14px;color:rgba(255,245,225,0.88);letter-spacing:3px;line-height:1.9;">橘洲焰火 · 每周六晚 20:30<br>最佳观赏点 · 问天台 / 湘江中路<br>时长约20分钟 · 免费观赏</span></div><div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div></section>
 
 <!-- ⑦ 美食 -->
-<section class="sec-food">
-  <div class="food-title font-xingshu reveal">舌尖上的<em>长沙</em></div>
-  <div class="food-grid reveal">
-    <div class="food-item"><div class="emoji">🍜</div><h5 class="font-xingshu">长沙米粉</h5><div class="rec font-sans">推荐 <span>杨裕兴</span></div></div>
-    <div class="food-item"><div class="emoji">🦞</div><h5 class="font-xingshu">口味虾</h5><div class="rec font-sans">推荐 <span>文和友</span></div></div>
-    <div class="food-item"><div class="emoji">🧈</div><h5 class="font-xingshu">臭豆腐</h5><div class="rec font-sans">推荐 <span>黑色经典</span></div></div>
-    <div class="food-item"><div class="emoji">🍵</div><h5 class="font-xingshu">茶颜悦色</h5><div class="rec font-sans">推荐 <span>太平街店</span></div></div>
-    <div class="food-item"><div class="emoji">🍡</div><h5 class="font-xingshu">糖油粑粑</h5><div class="rec font-sans">推荐 <span>李公庙</span></div></div>
-    <div class="food-item"><div class="emoji">🌶️</div><h5 class="font-xingshu">剁椒鱼头</h5><div class="rec font-sans">推荐 <span>费大厨</span></div></div>
-  </div>
-<div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div>
-</section>
+<section class="sec-food"><div class="bg-main"></div><div class="bg-overlay"></div><div style="position:absolute;top:8%;left:58%;z-index:20;text-align:center;"><span style="font-family:KaiTi,STKaiti,FangSong,cursive;font-size:26px;color:rgba(242,235,218,0.9);letter-spacing:16px;">美食推荐</span></div><div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div></section>
 
 <!-- ⑧ 结尾 -->
-<section class="sec-footer">
-  <div class="footer-title font-xingshu reveal">这个夏天<br>我在<b>橘子洲</b><br>等你</div>
-  <div class="footer-addr font-sans reveal">湖南省 · 长沙市 · 岳麓区 · 橘子洲景区<br>ORANGE ISLE, CHANGSHA, HUNAN</div>
-<div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div>
-</section>
+<section class="sec-footer"><div class="bg-main"></div><div class="bg-overlay"></div><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:20;text-align:center;background:rgba(25,18,10,0.38);padding:10px 20px;border-radius:6px;"><span style="font-family:'Liu Jian Mao Cao',KaiTi,STKaiti,cursive;font-size:36px;color:rgba(242,235,218,0.9);letter-spacing:12px;line-height:1.5;">长沙欢迎你</span></div><div style="position:absolute;bottom:28px;right:28px;z-index:99999;font-size:18px;letter-spacing:6px;color:#fff;font-weight:500;padding:4px 12px;background:rgba(0,0,0,.5);border-radius:4px;font-family:Arial,sans-serif;">Zcl</div></section>
 
-<audio id="bgm" loop>
+<audio id="bgm" loop autoplay muted playsinline>
   <source src="橘子洲的照片/音乐1.mp3" type="audio/mpeg">
 </audio>
 <button class="music-btn playing" id="musicBtn" title="音乐 开/关">&#9835;</button>
@@ -242,18 +178,31 @@
   }, {threshold: .12});
   document.querySelectorAll('.reveal').forEach(function(el){ obs.observe(el); });
 
-  // Music
+  // Music — autoplay with unmute on first interaction
   var audio = document.getElementById('bgm');
   var btn = document.getElementById('musicBtn');
-  audio.play().then(function(){ btn.classList.add('playing'); }).catch(function(){
+  var started = false;
+  audio.volume = 0.6;
+  // Try autoplay (may work if muted)
+  audio.play().then(function(){
+    btn.classList.add('playing');
+    if(!started){ audio.muted=false; started=true; }
+  }).catch(function(){
     btn.classList.add('off');
   });
   btn.addEventListener('click', function(){
-    if (audio.paused) { audio.play(); btn.classList.remove('off'); }
-    else { audio.pause(); btn.classList.add('off'); }
+    if (audio.paused) {
+      audio.muted=false; audio.play(); btn.classList.remove('off');
+    } else {
+      audio.pause(); btn.classList.add('off');
+    }
   });
+  // Unmute on any user interaction
   document.addEventListener('click', function once(){
-    if (audio.paused) { audio.play(); btn.classList.remove('off'); }
+    if(!started){ audio.muted=false; audio.play(); btn.classList.remove('off'); started=true; }
+  }, { once: true });
+  document.addEventListener('scroll', function once(){
+    if(!started){ audio.muted=false; audio.play(); btn.classList.remove('off'); started=true; }
   }, { once: true });
 
   // Auto-scroll
